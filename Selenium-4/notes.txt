@@ -13,6 +13,8 @@ Selenium 3:
         getLocation(): x,y
         getSize(): width, height
 Selenium4: getRect():x,y,width, height
-//================================Chapter 6 relative locators==========================
+//================================Chapter 6 Screenshots==========================
+Selenium 3: takes a screenshot of the current screen
+Selenium 4: takes a screenshot of the whole page
 
 //================================Chapter 7 relative locators==========================
