@@ -1,0 +1,110 @@
+//========================chapter 2 webdriver========================================
+System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
+// Set the browser type
+driver = new ChromeDriver();
+// set the web page we want to open
+driver.get("https://the-internet.herokuapp.com/");
+// manages the window size or fullscreen
+driver.manage().window().fullscreen();
+//set the browser size
+driver.manage().window().setSize(new Dimension(375,812));
+System.out.println(driver.getTitle());
+driver.quit(); // closes the session
+
+//=============================Chapter 3 locate elements========================
+ driver.findElement(By.linkText("Inputs")); // returns the first element it finds
+ or findElements // returns a list of web elements
+
+ //=============================Chapter 4 Interactions========================
+Framework layer: main folder
+    Finding the elements and specifying their location
+Test layer: test folder
+
+Page Object Model Design pattern:
+
+sendKeys(): type text in a text box
+getText(): returns text of an element
+isDisplayed():
+Click():
+isEnabled():
+
+// drop down menu
+Select(): takes a web driver element
+Select dropDownElement = new Select(driver.findElement(dropdown));
+dropDownElement.selectByVisibleText(option);
+
+ //=============================Chapter 5 advanced Interactions========================
+//Hover
+No method to hover, but we use a class called actions
+        Actions actions = new Actions(driver);
+ actions.moveToElement() : used to hover over the element
+ .perform: to actually do the action
+
+//=============================Chapter 6 additional keys========================
+sendKeys(): allows you to send a sequence of keys
+Keys.Chord(): sends multiple keys pressed together
+Keys.Ay7aga()
+//=============================Chapter 7 Alerts========================
+1- Alerts
+driver.switchTo().alert() // switches from the DOM object to the alert one.
+
+2- File uploads
+Interact using web driver
+3-Modals
+this one appears on the DOM
+
+//=============================Chapter 8 Frames========================
+Frames are HTML tags embedded inside another HTML tags, and the html tag is inside
+iFrame tag which represents the frame element
+ driver.switchTo().frame("");
+  driver.switchTo().parentFrame(); // goes back to the main frame
+
+//=============================Chapter 9 waits========================
+1. implicit wait (delay) stops the execution of the class
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+2. explicit wait
+ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // waits up to five seconds then throws execption
+wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
+3.Fluent Wait
+gives more control to the wait
+
+driver.manage().timeouts().setScriptTimeout() // for async methods
+
+//=============================Chapter 10 Javascript========================
+1. if the element exists in th dom
+JavascriptExecutor js = (JavascriptExecutor) driver; // allows us to execute any js code
+String script = "arguments[0].scrollIntoView()"; //arguments[0] is a placeholder for tableWebElement
+js.executeScript(script, tableWebElement);
+
+2. if the element doesn't exist on the DOM
+use any javascript code (window)
+
+//=============================Chapter 11 app navigation========================
+Navigation Interface:
+driver.navigate().
+                back()
+                forward()
+                refresh()
+                to()
+
+//=============================Chapter 12 Take screenshot========================
+ TakesScreenshot camera = (TakesScreenshot) driver;
+File screenshot = camera.getScreenshotAs(OutputType.FILE);
+
+//=============================Chapter 13 Event Listeners========================
+
+    private EventFiringWebDriver driver;
+        driver = new EventFiringWebDriver(new ChromeDriver());
+        driver.register(new EventReporter());
+
+//=============================Chapter 14 Extras========================
+1. Chrome Options:
+     ChromeOptions options = new ChromeOptions();
+     options.addArguments("disable-infobars");
+     options.setHeadless(true); // doesn't open chrome.
+
+2. Cookies
+Cookie cookie = new Cookie.Builder("tau", "123")
+                .domain("the-internet.herokuapp.com")
+                .build();
+        driver.manage().addCookie(cookie);
