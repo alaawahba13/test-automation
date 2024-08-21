@@ -1,0 +1,15 @@
+//================================Chapter 3 relative locators==========================
+5-with().
+        above(), below(), near(), right, left
+
+//================================Chapter 4 Window Management==========================
+WebDriver newTab =driver.switchTo().newWindow(WindowType.TAB);
+                                                         .WINDOW
+newTab.get("");
+each tab has window ID handle
+
+//================================Chapter 5 Get rect==========================
+
+//================================Chapter 6 relative locators==========================
+
+//================================Chapter 7 relative locators==========================
