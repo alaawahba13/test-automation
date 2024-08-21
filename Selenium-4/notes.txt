@@ -9,7 +9,10 @@ newTab.get("");
 each tab has window ID handle
 
 //================================Chapter 5 Get rect==========================
-
+Selenium 3:
+        getLocation(): x,y
+        getSize(): width, height
+Selenium4: getRect():x,y,width, height
 //================================Chapter 6 relative locators==========================
 
 //================================Chapter 7 relative locators==========================
