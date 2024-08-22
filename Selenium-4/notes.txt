@@ -17,4 +17,25 @@ Selenium4: getRect():x,y,width, height
 Selenium 3: takes a screenshot of the current screen
 Selenium 4: takes a screenshot of the whole page
 
-//================================Chapter 7 relative locators==========================
+//================================Chapter 7 Dev Tools==========================
+getDevTools(): returns a DevTools object, driver must be a browser type driver
+               e.g. ChromeDriver, EdgeDriver
+                DevTools devTools = driver.getDevTools();
+devTools.createSession(): creates a session
+.send(): interact with the developer tools, accepts commands as a parameter.
+addListener(event,handler): adds a listener
+.executeCdpCommand(String,Map):
+        String: command that you can find on the devTools website
+        Emulation.setGeolocationOverride()
+
+// Network
+devTools.send(Network.enable(  // enable the network
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty()));
+        devTools.send(Network.emulateNetworkConditions(
+                false, //keep the network online
+                150, // latency
+                2500, // downloadThroughput
+                2000, // uploadThroughput
+                Optional.of(ConnectionType.CELLULAR3G))); // network type
