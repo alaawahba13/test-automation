@@ -7,10 +7,10 @@ Feature: Login Functionality
   Scenario Outline: Login Successful
 
     Given I am in the login page of the Para Bank Application
-    When I enter valid <username> and <password>
+    When I enter valid <username> and <password> with <userFullName>
     Then I should be taken to the Overview page
 
   Examples:
-    |username|password|
-    |"alaawahba13"|"password"|
-    |"tautester"|"password"|
+    |username|password|userFullName|
+    |"alaawahba13"|"password"|"Alaa Wahba"|
+    |"tautester"|"password"|"TAU Tester"|

@@ -36,6 +36,12 @@
       <artifactId>cucumber-core</artifactId>
       <version>7.14.0</version>
     </dependency>
+    <!--Cumcber Pico container -->
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-picocontainer</artifactId>
+          <version>7.14.0</version>
+      </dependency>
 
     <!-- TestNG -->
     <dependency>
