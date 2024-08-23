@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(
 //        publish = true,
-     //   plugin = {"pretty", "json:target/cucumber.json","html:target/cucumberHtmlReport.html","io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm", "usage:target/cucumber-usage.json"},
+        plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber.json"},
 //        features = {"classpath:features"},
         features = {"src/test/resources/"},
 //        plugin = {"pretty", "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm","html:target/cucumberHtmlReport.html", "json:target/cucumber-html-reports/cucumber.json"},
