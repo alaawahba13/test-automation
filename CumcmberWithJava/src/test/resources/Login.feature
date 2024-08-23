@@ -4,8 +4,13 @@ Feature: Login Functionality
   As a valid Para Bank customer
   I want to login successfully
 @LoginScenario
-  Scenario: Login Successful
+  Scenario Outline: Login Successful
 
     Given I am in the login page of the Para Bank Application
-    When I enter valid credentials
+    When I enter valid <username> and <password>
     Then I should be taken to the Overview page
+
+  Examples:
+    |username|password|
+    |"alaawahba13"|"password"|
+    |"tautester"|"password"|

@@ -19,10 +19,10 @@ public class Steps {
         driver.get("http://parabank.parasoft.com/parabank/index.htm");
     }
 
-    @When("I enter valid credentials")
-    public void i_enter_valid_credentials() {
-        driver.findElement(By.name("username")).sendKeys("alaawahba13");
-        driver.findElement(By.name("password")).sendKeys("password");
+    @When("I enter valid {string} and {string}")
+    public void i_enter_valid_credentials(String username, String password) {
+        driver.findElement(By.name("username")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.name("username")).submit();
     }
 
@@ -35,4 +35,5 @@ public class Steps {
         driver.findElement(logoutLink).click();
         driver.quit();
     }
+
 }
