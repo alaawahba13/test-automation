@@ -1,0 +1,11 @@
+1. Add dependencies: Selenium, TestNG,cucmber,cucmber java, cucmber testNG
+2. add chromedriver.exe to resources folder
+3. Layout of project: 
+	test/resources/features: 	feature files
+	test/java/runner: 		Runner Class	
+	test/java/steps:		Steps files
+	test/java/base:			Base test  		// all test classes extend this class
+	main/java/pages:		Class for each page.	// each class has a constructor with driver
+	test/java/:			Test classes that have only @Test annotations
+					other annontations re present in base test
+4. Define the runner class when using cucumber 
